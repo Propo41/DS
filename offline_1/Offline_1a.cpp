@@ -107,9 +107,10 @@ int main()
     while(1)
     {
 
-
         cout << "Enter size of array: ";
         cin >> size;
+
+        system("CLS");
         int arr[size];
 
         for(int i=0; i<size; i++)
@@ -117,20 +118,53 @@ int main()
 
         int l=sizeof(arr)/sizeof(arr[0]);
 
+
         clock_t start_t, end_t;
         double cpu_time;
 
+        // bubble sort begins
         start_t = clock();
-
         bubbleSort(arr, l);
-
         end_t = clock();
         cpu_time = ((double) (end_t-start_t))/CLOCKS_PER_SEC;
 
-
+        cout << "Bubble Sort" << endl;
+        cout << "--------------------------------------------------------" << endl;
         cout << "Time taken: " << cpu_time << endl;
         cout << "Total Swap performed: " << swapCounter << endl;
         cout << "Total Comparison performed: " << comparisonCounter << endl;
+        cout << endl;
+
+
+        // insertion sort begins
+        start_t = clock();
+        insertionSort(arr, l);
+        end_t = clock();
+        cpu_time = ((double) (end_t-start_t))/CLOCKS_PER_SEC;
+
+        cout << "Insertion Sort" << endl;
+        cout << "--------------------------------------------------------" << endl;
+        cout << "Time taken: " << cpu_time << endl;
+        cout << "Total Swap performed: " << swapCounter << endl;
+        cout << "Total Comparison performed: " << comparisonCounter << endl;
+        cout << endl;
+
+
+        // selection sort begins
+        start_t = clock();
+        selectionSort(arr, l);
+        end_t = clock();
+        cpu_time = ((double) (end_t-start_t))/CLOCKS_PER_SEC;
+
+        cout << "Selection Sort" << endl;
+        cout << "--------------------------------------------------------" << endl;
+        cout << "Time taken: " << cpu_time << endl;
+        cout << "Total Swap performed: " << swapCounter << endl;
+        cout << "Total Comparison performed: " << comparisonCounter << endl;
+        cout << endl;
+
+
+
 
     }
 
